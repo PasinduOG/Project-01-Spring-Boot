@@ -57,6 +57,7 @@ This is a **work in progress** project. The basic REST API structure is implemen
 - ✅ RESTful API architecture
 - ✅ Spring Boot 3.5.8 framework with Spring Web
 - ✅ User model with basic attributes (id, firstName, lastName, age, city)
+- ✅ Lombok integration for reduced boilerplate code
 - ✅ Generic API response wrapper for consistent response format
 - ✅ User registration endpoint (POST /add-user)
 - ✅ Get all users endpoint (GET /get-all-users)
@@ -84,6 +85,7 @@ This is a **work in progress** project. The basic REST API structure is implemen
 - **Java**: 17
 - **Spring Boot**: 3.5.8
 - **Spring Web**: RESTful API development
+- **Lombok**: 1.18.42 - Reduces boilerplate code (getters, setters, constructors)
 - **Maven**: Dependency management and build tool
 
 ### Planned Dependencies
@@ -92,7 +94,6 @@ This is a **work in progress** project. The basic REST API structure is implemen
 - **MySQL/PostgreSQL** - Relational database
 - **JWT (jjwt)** - Token-based authentication
 - **Spring Validation** - Input validation with Bean Validation
-- **Lombok** - Reduce boilerplate code (getters, setters, constructors)
 - **Spring Boot Mail** - Email functionality
 - **H2 Database** - In-memory database for testing
 - **JUnit & Mockito** - Unit and integration testing
@@ -165,7 +166,7 @@ Project-01-Spring-Boot/
 The entry point of the Spring Boot application with `@SpringBootApplication` annotation.
 
 #### User.java (Model)
-User entity with the following fields:
+User entity with Lombok annotations (@AllArgsConstructor, @NoArgsConstructor, @Getter, @Setter, @ToString) and the following fields:
 - `id` (int) - Unique identifier
 - `firstName` (String) - User's first name
 - `lastName` (String) - User's last name
@@ -516,7 +517,6 @@ mvn clean test jacoco:report
 - [ ] Implement user search functionality
 - [ ] Add comprehensive API documentation with Swagger/OpenAPI
 - [ ] Create unit and integration tests with JUnit and Mockito
-- [ ] Add Lombok to reduce boilerplate code
 - [ ] Implement email verification for new registrations
 - [ ] Add password reset functionality
 - [ ] Implement role-based access control (Admin, User)
